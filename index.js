@@ -13,6 +13,7 @@ const record = [
     },
 ];
 
+/*
 function superbowlWin(array){
     for(const obj of array){
         if(obj.result === 'W'){
@@ -21,4 +22,14 @@ function superbowlWin(array){
         }
     }
 }
-superbowlWin(record);
+superbowlWin(record); */
+
+function findWin(game){
+    return game.result === "W"
+}
+
+const superbowlWin = (array) => {
+    const win = array.find(findWin);
+    return win? win.year : undefined;
+}
+console.log(superbowlWin(record));
